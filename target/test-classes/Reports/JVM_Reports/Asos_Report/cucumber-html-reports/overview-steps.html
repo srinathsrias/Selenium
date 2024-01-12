@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>Asos</td>
+      <td>08 Jan 2024, 12:33</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">org.asos.Hooks.afterScenario(io.cucumber.java.Scenario)</td>
+              <td>8</td>
+              <td class="duration" data-value="4902750000">4.902</td>
+              <td class="duration" data-value="4902750000">6.962</td>
+              <td class="duration" data-value="39222000000">39.222</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.asos.Hooks.beforeScenarios()</td>
+              <td>8</td>
+              <td class="duration" data-value="23409625000">23.409</td>
+              <td class="duration" data-value="23409625000">26.355</td>
+              <td class="duration" data-value="187277000000">3:7.277</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.asos.Login_Asos.the_user_should_click_signin_asos_button()</td>
+              <td>4</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.asos.Login_Asos.the_user_should_enter_all_the_given_details(io.cucumber.datatable.DataTable)</td>
+              <td>4</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.asos.Login_Asos.the_user_will_navigate_to_men_page()</td>
+              <td>4</td>
+              <td class="duration" data-value="3750000">0.003</td>
+              <td class="duration" data-value="3750000">0.015</td>
+              <td class="duration" data-value="15000000">0.015</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.asos.Registraion_Asos.the_user_need_to_click_i_am_not_robot_button()</td>
+              <td>8</td>
+              <td class="duration" data-value="10052375000">10.052</td>
+              <td class="duration" data-value="10052375000">20.178</td>
+              <td class="duration" data-value="80419000000">1:20.419</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.asos.Registraion_Asos.the_user_should_be_in_the_home_page_of_the_application()</td>
+              <td>8</td>
+              <td class="duration" data-value="21250000">0.021</td>
+              <td class="duration" data-value="21250000">0.154</td>
+              <td class="duration" data-value="170000000">0.170</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.asos.Registraion_Asos.the_user_should_click_join_asos_button()</td>
+              <td>4</td>
+              <td class="duration" data-value="1891750000">1.891</td>
+              <td class="duration" data-value="1891750000">2.156</td>
+              <td class="duration" data-value="7567000000">7.567</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.asos.Registraion_Asos.the_user_should_click_the_button(java.lang.String)</td>
+              <td>8</td>
+              <td class="duration" data-value="17515750000">17.515</td>
+              <td class="duration" data-value="17515750000">22.767</td>
+              <td class="duration" data-value="140126000000">2:20.126</td>
+              <td class="failed">50.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.asos.Registraion_Asos.the_user_should_enter_all_the_given_basic_details(io.cucumber.datatable.DataTable)</td>
+              <td>4</td>
+              <td class="duration" data-value="9537250000">9.537</td>
+              <td class="duration" data-value="9537250000">19.691</td>
+              <td class="duration" data-value="38149000000">38.149</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.asos.Registraion_Asos.the_user_should_place_the_cursor_on_the_account_icon()</td>
+              <td>8</td>
+              <td class="duration" data-value="720250000">0.720</td>
+              <td class="duration" data-value="720250000">1.345</td>
+              <td class="duration" data-value="5762000000">5.762</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.asos.Registraion_Asos.the_user_will_navigate_to_my_account_page()</td>
+              <td>4</td>
+              <td class="duration" data-value="4000000">0.004</td>
+              <td class="duration" data-value="4000000">0.016</td>
+              <td class="duration" data-value="16000000">0.016</td>
+              <td class="failed">0.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>12</td>
+            <td>72</td>
+            <td class="duration">6.926</td>
+            <td class="duration">3:7.277</td>
+            <td class="duration">8:18.723</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
